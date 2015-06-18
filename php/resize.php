@@ -7,14 +7,14 @@
 function resize($width){
   /* Get original image x y*/
   list($w, $h) = getimagesize($_FILES['image']['tmp_name']);
-  $height = (980*$h)/$w;
+  $height = round((980*$h)/$w);
   /* calculate new image size with ratio */
   $ratio = max($width/$w, $height/$h);
-  $h = ($h - $height / $ratio) /2;
+  $h = $height / $ratio;
   $x = ($w - $width / $ratio) / 2;
   $w = $width / $ratio;
   /* new file name */
-  $path = '../files/'.$width.'x'.$height.'_'.$_FILES['image']['name'];
+  $path = 'tmp/'.$width.'x'.$height.'_'.$_FILES['image']['name'];
   /* read binary data from image file */
   $imgString = file_get_contents($_FILES['image']['tmp_name']);
   /* create image from string */
