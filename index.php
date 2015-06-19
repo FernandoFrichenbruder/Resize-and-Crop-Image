@@ -38,7 +38,7 @@
 		<div class="col-md-12 crop-area">
 			<h3>Faça a seleção da area para cortar</h3>
 			<img src="" id="cropbox" />
-			<form action="crop.php" method="post" onsubmit="return checkCoords();">
+			<form action="php/crop.php" id="crop" method="post">
 				<input type="hidden" id="x" name="x" />
 				<input type="hidden" id="y" name="y" />
 				<input type="hidden" id="w" name="w" />
